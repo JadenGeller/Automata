@@ -75,4 +75,4 @@ Here's another example: This finite automata parses the string "hey" or the stri
     print(machine.state == success) // -> true
 ```
 
-What now? Build your own! Or learn more about finite state machines [here](https://en.wikipedia…)!
+What now? Build your own! Or learn more about finite state machines [here](https://en.wikipedia.org/wiki/Finite-state_machine)!
