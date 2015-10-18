@@ -74,3 +74,5 @@ Here's another example: This finite automata parses the string "hey" or the stri
     try machine.run("helllllllo".characters)
     print(machine.state == success) // -> true
 ```
+
+What now? Build your own! Or learn more about finite state machines [here](https://en.wikipedia…)!
