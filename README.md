@@ -1,13 +1,13 @@
 Quickly and easily built finite automata in Swift!
 
 First define the states that exist in your automata.
-```
+```swift
     let evenZeros = State()
     let oddZeros = State()
 ```
 
 Then, define the transitions that exist between each state.
-```
+```swift
     let instructions = state(
         evenZeros.transition(
             0 ->> oddZeros,
@@ -23,7 +23,7 @@ Then, define the transitions that exist between each state.
 Note that, an `otherwise` parameter can be included to indicate what should happen on failure to match---either a state to indicate a transition, `stay` to stay, or `fail` to throw an exception. If no otherwise parameter is provided, the default is `fail`. You can also provide an otherwise transition for an unhandled state as well.
 
 Next, we create our `Automata` and run it!
-```
+```swift
     var machine = Automata(initialState: evenZeros, transitions: instructions)
     try machine.run([0, 0, 0, 1, 1, 0, 1, 1, 0])
     print(machine.state == evenZeros) // -> false
@@ -34,7 +34,7 @@ Since our input (which can be any `SequenceType`) has an odd number of zeros, we
 
 Here's another example: This finite automata parses the string "hey" or the string "hello" with an arbitrary number of l's. Note that we had to specify the type of the instructions since Swift infers things like `"h"` to be of type `String` rather than `Character`---not what we want.
 
-```
+```swift
  let empty = State()
     let h = State()
     let he = State()
